@@ -189,7 +189,7 @@ module AjaxfulRating # :nodoc:
       rateable = self.base_class.name
       sql = sanitize_sql(["SELECT DISTINCT r2.* FROM rates r1 INNER JOIN " +
             "#{rateable.constantize.table_name} r2 ON r1.rateable_id = r2.id " +
-            "WHERE (r1.[rateable_type] = ? AND r1.[#{attr_name}] = ?)",
+            "WHERE (r1.rateable_type = ? AND r1.#{attr_name} = ?)",
           rateable, attr_value])
       find_by_sql(sql)
     end

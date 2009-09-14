@@ -1,11 +1,5 @@
-<div class="wrapper">    
-    <div class="contentHeadline">
-    	<span class="collumTopText">
-        People attending <%= @active_conference.title %>
-    	</span>
-    </div>
-</div>
-
+<%= render :partial => '/shared/title_bar', :locals => {:title => @title} %>
+<%= render :partial => '/shared/notice' %>
 
 <div class="myWrapper">
 <table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
@@ -40,7 +34,7 @@
 	</td>
 		<% if is_admin? %>
 	<td align="center">
-	<%= select_tag 'registration[payment_status]', options_for_select( %w{no yes}, attendee.payment_status_txt), 
+	<%= select_tag 'registration[payment_status]', options_for_select( %w{no yes}, attendee.payment_status), 
 	{ :onchange => remote_function( :updates => 'notify', :url => registration_path(attendee), :method => 'put', :with => 'Form.Element.serialize(this)') } %>
 	</td>
 	<td align="center">
@@ -49,12 +43,12 @@
 	
 	<%end%>			
     <td align="center">
-		<% if attendee.user == current_user %>
+		<% if (attendee.user == current_user) || is_admin?  %>
 			<%= link_to 'Edit', edit_registration_path(attendee.id) %>
 		<% end %>
 	</td>	
     <td align="center">
-		<% if attendee.user == current_user %>
+		<% if attendee.user == current_user || is_admin? %>
 			<%= link_to 'Unregister', registration_path(attendee), :confirm => 'Are you sure you want to unregister?', :method => :delete %>						
 		<% end %>	
 	</td>

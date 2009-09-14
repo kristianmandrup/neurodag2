@@ -1,5 +1,4 @@
 
-*) ryd op i plugin og deploye
 
 *) liste over ratede talks - inddelt efter højest rating
 

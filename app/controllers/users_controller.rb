@@ -3,6 +3,28 @@ class UsersController < ApplicationController
   helper :profile, :avatar
   before_filter :protect, :only => [:index, :edit]
   
+  def show_rated_talks
+    @user = User.find(params[:id])    
+    return if !@user.is_referee? 
+    @title ="Referee #{full_name}:: rated talks "  
+    # @ref_rated_talks = Rate.find_all_by_rateable_type_and_user_id('Talk', 2)    
+    @ref_talks = Talk.find_rated_by(current_user)  
+    @ref_talks.compact!
+    
+    @ref_talks_research = @ref_talks.sort do |t2, t1|
+      t1.rate_by(@user, :research).stars  <=> t2.rate_by(@user, :research).stars
+    end
+
+    @ref_talks_presentation_style = @ref_talks.sort do |t2, t1|
+      t1.rate_by(@user, :presentation_style).stars  <=> t2.rate_by(@user, :presentation_style).stars
+    end
+    
+    @ref_talks_organization = @ref_talks.sort do |t2, t1|
+      t1.rate_by(@user, :organization).stars  <=> t2.rate_by(@user, :organization).stars
+    end
+    
+  end
+  
   def index
     @title = "Neurodag User Hub"
     @user = User.find(session[:user_id])
@@ -70,6 +92,11 @@ class UsersController < ApplicationController
       logger.debug("UPDATE NOT OK")            
       flash[:notice] = 'User was not updated.'
     end
+    render :update do |page|
+      page.replace_html 'notice', flash[:notice]
+      page.visual_effect :highlight, 'notice'
+    end
+    
   end
   
   # Edit the user's basic info.

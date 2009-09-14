@@ -19,6 +19,7 @@ th td {
 td {
  padding-left:  6px;
  padding-right: 6px;
+ line-height: 20px;
 }
 
 td.name {
@@ -49,6 +50,7 @@ table#friends th {
 	border: 1px solid gray;
 	width: 532px;
 	padding: 10px;
+	margin-bottom: 6px;
   	-moz-border-radius: 5px;
   	-webkit-border-radius: 5px;		
 }

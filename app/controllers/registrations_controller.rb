@@ -10,7 +10,9 @@ class RegistrationsController < ApplicationController
     @registration = Registration.find(params[:id])    
     @is_in_competition = participate_competition_text
     @bringing_posters = bringing_posters_text
-    @paymentreceived=  @registration.payment_status_txt
+    logger.debug(@registration.to_yaml)
+    logger.debug("payment status: #{@registration.payment_status_txt}")
+    @payment_received =  @registration.payment_status_txt
   end
 
   def index
@@ -18,7 +20,8 @@ class RegistrationsController < ApplicationController
                     :conditions => 'user_id IS NOT NULL',
                     :include => :user, :page => params[:page], :per_page => 8, 
                     :order => 'created_at DESC')
-    logger.debug(@attendees.to_yaml)
+                    
+    @title = "People attending" + @active_conference.title
   end
 
   def new
@@ -74,13 +77,22 @@ class RegistrationsController < ApplicationController
   
   def update
     @registration = Registration.find(params[:id])
-    @registration.update_attributes(params[:registration])
+    preg = params[:registration]
+    logger.debug(preg)
+    preg[:payment_status] = text_to_bool(preg[:payment_status] ) 
+    @registration.update_attributes(preg)
     if @registration.save
       flash[:notice] = @@success_msg
     else
       flash[:notice] = @@error_msg        
-    end      
-    redirect_to registration_path(current_user.registrations.first.id)        
+    end     
+
+    render :update do |page|
+      page.replace_html 'notice', flash[:notice]
+      page.visual_effect :highlight, 'notice'
+    end
+         
+    # redirect_to registration_path(current_user.registrations.first.id)        
     # render :action => "edit"           
   end
     

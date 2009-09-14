@@ -1,4 +1,5 @@
-<%= flash[:notice] %>
+<%= render :partial => '/shared/title_bar', :locals => {:title => @title} %>
+<%= render :partial => '/shared/notice' %>
 
 <%= error_messages_for :registration %>
 

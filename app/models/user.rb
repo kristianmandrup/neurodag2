@@ -125,6 +125,9 @@ class User < ActiveRecord::Base
     self.role == 'admin'
   end
 
+  def is_referee?
+    self.role == 'referee'
+  end
  
   # Log a user in.
   def login!(session)

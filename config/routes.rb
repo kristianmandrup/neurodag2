@@ -18,7 +18,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # REST resources.
   map.resources :specs
-  map.resources :users,  :collection => {:delete_all => :put}
+  map.resources :users, :member => {:show_rated_talks => :get},  :collection => {:delete_all => :put}
   
   # The priority is based upon order of creation: first created -> highest priority.
   

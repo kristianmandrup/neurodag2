@@ -1,0 +1,58 @@
+<%= render :partial => '/shared/title_bar', :locals => {:title => @title} %>
+<%= render :partial => '/shared/notice' %>
+
+							
+
+
+
+<div class="myWrapper">
+
+
+	<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
+		<tr>	  	
+			<th>Author</th><th>title</th><th>Research rating</th>
+		</tr>
+	<% @ref_talks_research.each do |talk| %>
+	<% logger.debug(talk)%>
+	<% stars = talk.rate_by(@user, :research).stars %>
+
+<tr class="<%= cycle('odd', 'even') %>">			
+			<td><%= stars %></td>
+		</tr>
+	<% end %>
+    </table>
+	<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
+		<tr>
+			<th>Pres rating</th>
+		</tr>
+
+	<% @ref_talks_presentation_style.each do |talk| %>
+	<% stars = talk.rate_by(@user, :presentation_style).stars %>
+	  	<tr class="<%= cycle('odd', 'even') %>">
+			<td><%= stars %></td>
+		</tr>
+	<% end %>
+	</table>
+
+	<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
+		<tr>
+
+			<th>Org rating</th>
+		</tr>
+
+	<% @ref_talks_organization.each do |talk| %>
+	<% stars = talk.rate_by(@user, :organization).stars %>
+	  	<tr class="<%= cycle('odd', 'even') %>">
+			<td><%= stars %></td>
+		</tr>
+	<% end %>
+	</table>
+
+
+
+
+	<!-- <th>Presentation rating</th>
+	<th>Organization rating</th>	 -->
+
+</div>
+		

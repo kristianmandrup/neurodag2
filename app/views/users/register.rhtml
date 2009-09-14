@@ -1,9 +1,12 @@
-<h2>Sign up for the Neurodag community.</h2>			
+<%= render :partial => '/shared/title_bar', :locals => {:title => @title} %>
+<%= render :partial => '/shared/notice' %>
+
+<div class="myWrapper">
 	
 <% form_for :user do |form| %>	
 	<%= render :partial => 'form', :locals => {:form => form} %>
 	<div class="form_row">  
-		<%= submit_tag "Register!", :class => "submit" %> 
+		<%= submit_tag "OK", :class => "submit" %> 
 	</div>
 	<div class="form_footer">
 		When you register you agree that we keep your information in our database and that some of this information will
@@ -13,4 +16,4 @@
 		</p>
 	</div>
 <% end %>
-
+</div>

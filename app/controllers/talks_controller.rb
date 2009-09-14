@@ -25,6 +25,10 @@ class TalksController < ApplicationController
       @talks = Talk.all :order => 'created_at DESC'
     end
 
+    def all_ref_rated
+      @talks = Talk.paginate :all, :page => params[:page], :order => 'created_at DESC'      
+    end
+
     # GET /talks
     def your
       @talks = Talk.find_by_user_id(current_user.id)

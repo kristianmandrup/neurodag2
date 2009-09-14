@@ -1,14 +1,19 @@
 
 
+<%= render :partial => '/shared/notice' %>
+
+
 the first time make sure you clean the database
 rake db:migrate OR rake db:schema:load
 rake bootstrap:all
 
 
 
-interacting with heroku.com:
-
+for clean up:
+rm -rf .git  
 git init
+
+interacting with heroku.com:
 git add .
 
 git commit -a -m "new app"
@@ -19,3 +24,12 @@ git push heroku master
 
 
 heroku console 2+2
+
+
+
+
+
+
+
+
+

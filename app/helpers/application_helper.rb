@@ -100,6 +100,9 @@ module ApplicationHelper
     value ? "Yes" : "No"
   end
 
+  def text_to_bool(text)
+    text.downcase == "yes"
+  end
   
   def participate_competition_text
     bool_text(compete_in_active_conference?)

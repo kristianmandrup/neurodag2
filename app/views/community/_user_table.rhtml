@@ -1,12 +1,7 @@
 
 <% if @users and not @users.empty? %>
-<div class="wrapper">    
-    <div class="contentHeadline">
-    	<span class="collumTopText">
-        Neurodag members
-    	</span>
-    </div>
-</div>
+<%= render :partial => '/shared/title_bar', :locals => {:title => @title} %>
+<%= render :partial => '/shared/notice' %>
 <div class="myWrapper">
 	<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
 	
@@ -35,13 +30,15 @@
 			  <td align ="center"><%= user.location %></td>
 			  <td align ="center"><%= user.created_at.to_s(:vshort) %></td>
 			<% if logged_in? && is_admin? && current_user != user %>
-				<td align ="center">
+				<td align ="center" >
 		<%= select_tag 'user[role]', options_for_select( %w{user referee admin}, user.role), 
-		{ :onchange => remote_function( :updates => 'notify', :url => user_path(user), :method => 'put', :with => 'Form.Element.serialize(this)') } %></td>
+		{ :onchange => remote_function( :url => user_path(user), :method => 'put', :with => 'Form.Element.serialize(this)') } %></td>
+				<td align ="center" id="user_role_<%= user.id %>" style="display:none"></td> 
 				<td align ="center"> <%= user.id  %></td>	
 				<td align ="center"><%= check_box_tag 'del_user[]' %></td>
 			<% else %>
-				<td align ="center" id="user_role_<%= user.id %>"><%= user.role%></td> <td align ="center"> <%= user.id  %></td><td></td>
+				<td align ="center" id="user_role_<%= user.id %>"><%= user.role%></td> 
+				<td align ="center"> <%= user.id  %></td><td></td>
 			<% end %>
 		</tr>
 		<% end %>

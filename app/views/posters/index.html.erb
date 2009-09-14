@@ -24,7 +24,7 @@
 	<% @posters.each_with_index do |poster, index| %>
 	  <tr class="<%= cycle('odd', 'even') %>">
 		<td align="center">
-			<%= poster.id %>
+			<%= index+1 %>
 		</td>
 		<td>
 			<%= h truncate(poster.title, 20) %>
