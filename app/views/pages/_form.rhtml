@@ -1,0 +1,13 @@
+<%= error_messages_for :page %>
+
+<%= text_field_for form, "title", 70 %>
+<br>
+  <label for="embedded_video_html">Embedded video (html) from youtube:</label>
+  	<%= form.text_area :embedded_video_html, :rows => 8, :cols => 60, :class => 'mceNoEditor' %>
+<div class="form_row">
+  <label for="body">Body:</label>
+	<% use_tinymce -%>
+  	<%= form.text_area :body, :rows => 20, :cols => 60, :class => "mce-editor" %>
+</div>
+<br>
+<%= text_field_for form, "video_url", 70 %>

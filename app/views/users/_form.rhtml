@@ -1,0 +1,31 @@
+<%= error_messages_for 'user' %>
+<fieldset>
+   <legend>User name</legend>			
+  <%= render :partial => "screen_name_field_row", :locals  => { :form => form } %>
+</fieldset>			
+<fieldset>
+   <legend>Name</legend>
+   <p>
+     <label for="first_name">First name</label> 
+     <%= form.text_field :first_name, :size => 20,
+                                 :maxlength => 25 %>
+   </p>
+   <p>
+     <label for="last_name">Last name</label> 
+     <%= form.text_field :last_name, :size => 20,
+                                 :maxlength => 425 %>
+   </p>
+</fieldset
+<fieldset>
+   <legend>Email</legend>					
+   <%= render :partial => "email_field_row", :locals  => { :form => form } %> 
+</fieldset>
+<fieldset>
+   <legend>Password</legend>			
+  <%= render :partial => "password_field_row", :locals  => { :form => form, :field => "password" } %> 
+  <p>
+    <label for="password">Confirm</label> 
+    <%= form.password_field "password", 
+                            :size =>      User::PASSWORD_SIZE,
+                            :maxlength => User::PASSWORD_MAX_LENGTH %>
+  </p></fieldset>

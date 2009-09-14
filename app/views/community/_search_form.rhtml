@@ -1,0 +1,23 @@
+<h2>Search for members</h2>
+
+<% form_tag search_path, :id => "searchForm", :method => "get" do %>
+<fieldset>
+	<legend>Query</legend> 
+    <div class="form_row">
+      <%= text_field_tag "q", params[:q] %>
+    </div>
+</fieldset>
+    <input type="submit" value="Search" />
+    <input type="submit" value="Browse all" onclick="browseAll()" />
+<% end %>
+
+<% if @pages %>
+<p>
+&nbsp; Found <%= pluralize(@pages.item_count, "match") %>.
+  <% if paginated? %>
+    <% first = @pages.current_page.first_item %>
+    <% last  = @pages.current_page.last_item %>
+    Displaying users <%= first %>&ndash;<%= last %>.
+  <% end %>
+</p>
+<% end %>

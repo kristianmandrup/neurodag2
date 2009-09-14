@@ -1,0 +1,59 @@
+<div class="wrapper">    
+    <div class="contentHeadline">
+    	<span class="collumTopText">
+        <%= h @user.full_name %>
+    	</span>
+    </div>
+</div>
+
+<div class="myWrapper">
+
+
+	<div id="primary_info_wrapper" style="float:left">
+  
+	 <!-- OCCUPATION TITLE-->				
+	  <% if !@spec.title.blank? %>
+		    <%= h @spec.title %><br>
+	  <% end %>
+	 <!-- OCCUPATION -->
+	<% if !@spec.occupation.blank? %>
+	 <%= h @spec.occupation %><br>
+	<% end %>
+	<% if !@spec.location.blank? %>
+	 <%= h @spec.location %><br>
+	<% end %>
+ 
+	 <!-- ASSOCIATES -->								
+	  <% friends_content = render(:partial => "friendship/friends") %>
+	  <%= render :partial => "shared/sidebar_box_basic", 
+	             :locals => {:title => 'Associates', :content => friends_content} %>				 
+
+	 <!-- C.V -->				
+	  <%= render :partial => "shared/sidebar_box_basic", 
+	             :locals => {:title => 'Short CV', :content => @faq.short_cv, :link_path => '/faq/edit'} %>
+	</div>
+
+	<fieldset>
+	<div id="secondary_info_wrapper" style="float:left">				
+	  <%= render :partial => 'avatar/sidebar_box' %> 
+	  <%= render :partial => 'contact_box' %>
+	  <%= render :partial => 'faq/sidebar_box', :collection => Faq::FAVORITES %>   
+	</div>
+	</fieldset>
+
+<div id="blogs_wrapper" style="clear:both">
+<!-- BLOGS -->
+  <% unless @blog.posts.empty? %>
+    <hr noshade />
+    Blog: <%= render :partial => "blog" %>
+  <% end %>                           
+</div>
+</div>
+
+<div id="posters_wrapper" style="clear:both">
+<!-- Posters -->
+  <% unless @posters.empty? %>
+    <hr noshade />
+    <%= render :partial => "posters/poster", :collection =>  @posters %>
+  <% end %>                           
+</div>

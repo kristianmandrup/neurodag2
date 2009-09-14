@@ -1,0 +1,22 @@
+
+
+<div class="post">
+	<div class="post-bgtop">
+		<div class="post-bgbtm">
+			<h1 class="title"><a href="#">Search results</a></h1>
+			<div class="entry">
+				<% if @pages %>
+				<p>
+				Found <%= pluralize(@pages.item_count, "match") %>.
+				  <% if paginated? %>
+				    <% first = @pages.current_page.first_item %>
+				    <% last  = @pages.current_page.last_item %>
+				    Displaying users <%= first %>&ndash;<%= last %>.
+				  <% end %>
+				</p>
+				<% end %>
+
+			</div>
+		</div>
+	</div>
+</div>

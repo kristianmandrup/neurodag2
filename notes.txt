@@ -1,0 +1,21 @@
+
+
+the first time make sure you clean the database
+rake db:migrate OR rake db:schema:load
+rake bootstrap:all
+
+
+
+interacting with heroku.com:
+
+git init
+git add .
+
+git commit -a -m "new app"
+
+If no existing homepage:
+heroku create neurodag  
+git push heroku master
+
+
+heroku console 2+2

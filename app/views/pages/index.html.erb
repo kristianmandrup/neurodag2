@@ -1,0 +1,27 @@
+<h1>Listing pages</h1>
+
+<table cellpadding="2" cellspacing="0">
+  <tr>
+	<th width="200">Title</th>
+	<th>Belongs to</th>
+	<th>&nbsp;</th>
+	<th>&nbsp;</th>
+  </tr>
+
+
+<% for page in @pages %>
+<tr class="<%= cycle('odd', 'even') %>">
+	<td><%= page.title %></td>
+	<td><%= @Page.find_by_conference_id(page.conference_id) %></td>
+    <td><%= link_to 'Show', page %></td>
+    <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    <td><%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+
+
+<br />
+
+<%#= link_to 'New pages', new_pages_path %>

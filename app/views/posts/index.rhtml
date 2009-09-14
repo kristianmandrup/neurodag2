@@ -1,0 +1,7 @@
+<h2>Your Blog Posts</h2>
+<p class="edit_link">
+  <%= link_to 'Add a new post', new_blog_post_path %>   
+</p>
+<%= render :partial => "post", :collection => @posts %>
+<!-- shows pagination links (prev, 1,2,3, ... , next)>
+<%= will_paginate @posts %>

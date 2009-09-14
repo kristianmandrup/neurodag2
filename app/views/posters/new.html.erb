@@ -1,0 +1,23 @@
+
+<%= error_messages_for :poster %>
+<div class="wrapper">    
+    <div class="contentHeadline">
+    	<span class="collumTopText">
+        New poster abstract <%= @active_conference.title %>
+    	</span>
+    </div>
+</div>
+
+
+<div class="myWrapper">
+
+
+		<% form_for(@poster) do |form| %>
+			<%= render :partial => "form", :locals => { :form => form } %>
+		  <p>	
+		    <%= form.submit "Create" %>
+		  </p>
+		<% end %>
+
+		<%= link_to 'Back', posters_path %>
+</div>

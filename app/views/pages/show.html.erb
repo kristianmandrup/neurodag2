@@ -1,0 +1,28 @@
+<h1><%= @title %></h1>
+<p><%= @content %></p>
+<% if @videos && @videos.size > 0 %>
+	<% @videos.each do |video| %>
+	<%= @embedded_video_html  %>
+	<% if video.url != "" %>
+	<center>
+		<object width="<%= video.width || 300 %>" height="<%= video.height || 400 %>">
+			<param name="movie" value="<%= video.url %>"></param>
+			<param name="allowFullScreen" value="true"></param>
+			<param name="allowscriptaccess" value="always"></param>
+			<embed src="<%= video.url %>" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="<%= video.height || 400 %>" height="<%= video.width || 300%>"</embed>
+		</object>
+	</center>
+	<% end %>	
+	<% end %>
+<% else %>
+	No videos
+<% end %>
+
+<% if logged_in? && current_user.admin? %>
+<p>
+	<br>
+	<%= link_to 'Edit', edit_page_path(@page) %>
+	<%= link_to 'Destroy', @page, :confirm => 'Are you sure?', :method => :delete %>
+	<%= link_to 'New page', new_page_path(:page => @page.id)  %>
+</p>
+<% end %>

@@ -1,0 +1,28 @@
+<div class="wrapper">    
+    <div class="contentHeadline">
+    	<span class="collumTopText">
+        Talks pending rating by <%= current_user.full_name %>
+    	</span>
+    </div>
+</div>
+
+
+<div class="myWrapper">
+	<%= render :partial => 'unrated_talks' %>
+	<%= link_to "Update list", referee_talks_path, :class => 'big_link' %> <br><br>
+
+</div>
+<br>
+<div class="wrapper">    
+    <div class="contentHeadline">
+    	<span class="collumTopText">
+        Talks rated by <%= current_user.full_name %>
+    	</span>
+    </div>
+</div>
+
+<div class="myWrapper">
+<%= render :partial => 'rated_talks' %>
+</div>
+
+

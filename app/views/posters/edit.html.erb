@@ -1,0 +1,12 @@
+<h2>Editing poster</h2>
+<%= error_messages_for :poster %>
+
+<% form_for(@poster) do |form| %>
+  <%= render :partial => "form", :locals => { :form => form } %>
+  <p>
+    <%= form.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @poster %> |
+<%= link_to 'Back', posters_path %>

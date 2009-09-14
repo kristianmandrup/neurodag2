@@ -1,0 +1,10 @@
+<li>
+	<h2>Blogs</h2>
+	<ul>
+		<% @recent_blog_entries.each do |entry| %>
+		<li><%= link_to entry.title, blog_path(entry)%>
+			<span><%= h entry.updated_at.to_s(:vshort) || 'unknown date' %></span></li>
+		<% end %>
+		<li><%= link_to 'All blogs', blogs_path%></li>
+	</ul>
+</li>				

@@ -1,0 +1,34 @@
+
+<div class="wrapper">    
+    <div class="contentHeadline">
+    	<span class="collumTopText">Neurodag login</span>
+    </div>
+</div>
+<%= flash[:notice]%> 
+<div class="formWrapper">
+<% form_for :user do |form| %>
+
+<fieldset>
+   <legend>Login</legend>
+
+	<%= render :partial => "screen_name_field_row", :locals  => { :form => form } %> 
+	<%= render :partial => "password_field_row", :locals  => { :form => form, :field => "password" } %>
+	<p>
+  <label for="remember_me">Remember me</label>
+  <%= form.check_box :remember_me %>
+  </p>
+</fieldset>	
+<%= submit_tag "OK", :class => "submit" %>  
+
+<div class="form_footer">
+	  Forgot your screen name or password? 
+	  <%= link_to "Remind Me!", :controller => "email", :action => "remind" %>
+	<p>  
+	  Not a member?  <%= link_to "Register now!", :action => "register" %> It's free.
+	</p>
+</div>
+<script type="text/javascript">
+	$('user_screen_name').focus();
+</script>
+</div>
+<% end %>

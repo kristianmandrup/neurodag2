@@ -1,0 +1,9 @@
+<h1><%= @title %></h1>
+<p><%= @content %></p>
+
+<%# if current_user && current_user.admin? %>
+<% if logged_in? && (current_user.admin? || current_user == @blog.user) %>
+	<%#= link_to 'New post', new_post_path({:blog_id => @blog.id}) %>
+	<%= link_to 'Edit', edit_blog_path(@blog) %>
+	<%= link_to 'Destroy', @blog, :confirm => 'Are you sure?', :method => :delete %>
+<% end %>

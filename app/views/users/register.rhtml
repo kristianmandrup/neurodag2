@@ -1,0 +1,16 @@
+<h2>Sign up for the Neurodag community.</h2>			
+	
+<% form_for :user do |form| %>	
+	<%= render :partial => 'form', :locals => {:form => form} %>
+	<div class="form_row">  
+		<%= submit_tag "Register!", :class => "submit" %> 
+	</div>
+	<div class="form_footer">
+		When you register you agree that we keep your information in our database and that some of this information will
+		be visible for other registered users. We guarantee that the information you enter will not be shared with 3rd parties.
+		<p>
+		We will not mismanage your contact information. 
+		</p>
+	</div>
+<% end %>
+

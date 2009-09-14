@@ -1,0 +1,69 @@
+<%= flash[:notice]%> 
+<div class="wrapper">    
+    <div class="contentHeadline">
+    	<span class="collumTopText">
+        All posters submitted for <%= @active_conference.title %>
+    	</span>
+    </div>
+</div>
+
+<div class="myWrapper">
+	<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
+	  <tr>
+		<th width="20">#</th>
+		<th>Title</th>
+		<th>Authors</th>
+		<th>Owner</th>
+		<th>Submitted at</th>
+		<th>Rating</th>
+		<th>&nbsp;</th>
+		<th>&nbsp;</th>
+		<th>&nbsp;</th>
+	  </tr>
+
+	<% @posters.each_with_index do |poster, index| %>
+	  <tr class="<%= cycle('odd', 'even') %>">
+		<td align="center">
+			<%= poster.id %>
+		</td>
+		<td>
+			<%= h truncate(poster.title, 20) %>
+		</td>
+
+		<td>
+			<%= h truncate(poster.authors,20) %>
+		</td>	
+		<td>
+			<%= link_to (h(poster.owner_name), profile_path(poster.owner.screen_name)) if poster.owner %>
+		</td>	
+		<td>
+			<%= h poster.updated_at.to_s(:vshort) %>
+		</td>	
+		<td> 
+			<%= ratings_for poster, :static, :dimension => :research, :small_stars => true %> 
+			<span id="poster-<%= poster.id %>-research_avg">
+				<%= poster.rate_average(true, :research) %>	
+			</span>
+		</td>
+
+		<% if (current_user && (@poster_owner == current_user)) != (current_user && is_admin?) %>
+		<%# if (current_user && (@poster_owner == current_user)) %>
+		    <td><%= link_to 'Show', poster %></td>
+		    <td><%= link_to 'Edit', edit_poster_path(poster) %></td>
+		    <td><%= link_to 'Destroy', poster, :confirm => 'Are you sure?', :method => :delete %></td>
+		<% else %>
+			    <td><%= link_to 'Show', poster %></td><td>&nbsp;</td><td>&nbsp;</td>
+		<% end %>
+	  </tr>
+	<% end %>
+	</table>
+
+	<div class="digg_pagination">
+      <div clas="page_info">
+        <%= page_entries_info @posters %>
+      </div>
+	  <%= will_paginate @posters, :container => false %>
+    </div>
+   
+
+</div>

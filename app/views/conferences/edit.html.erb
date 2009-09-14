@@ -1,0 +1,11 @@
+<h2>Edit conference</h2>
+<%= error_messages_for :conferences %>
+<% use_tinymce -%>
+
+<% form_for(@conference) do |form| %>
+	  <%= render :partial => "form", :locals => { :form => form } %>
+	  <%= submit_tag "Update", :class => "submit" %> 
+<% end %>
+
+<%= link_to 'Show', @conference %> |
+<%= link_to 'Back', conferences_path %>

@@ -1,0 +1,23 @@
+<div class="wrapper">    
+    <div class="contentHeadline">
+    	<span class="collumTopText">
+        talks rated by all referees :: <%= @active_conference.title %>
+    	</span>
+    </div>
+</div>
+
+
+<div class="wrapper">    
+    <div class="contentHeadline">
+    	<span class="collumTopText">
+        Talks rated by <%= @user_name%>
+    	</span>
+    </div>
+</div>
+
+<div class="myWrapper">
+<%= render :partial => 'rated_talks' %>
+</div>
+
+
+<br/>

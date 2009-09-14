@@ -1,0 +1,30 @@
+<h2>Edit user details</h2>
+<% form_for :spec do |form| %>
+
+  <%= error_messages_for 'spec' %>
+<fieldset>
+	<legend>User details</legend>
+  <div class="form_row">
+    <label for="title">Degree:</label> 
+  	<%= form.text_field :title %>
+  </div>
+
+  <div class="form_row">
+    <label for="birthdate">Birthdate:</label> 
+    <%= date_select :spec, :birthdate, 
+                           :start_year => Spec::START_YEAR,
+                           :end_year => Time.now.year,
+                           :include_blank => true,
+                           :order => [:month, :day, :year] %>
+  </div> 
+  <div class="form_row">
+    <label for="occupation">Job title:</label> 
+  	<%= form.text_field :occupation %>
+  </div>
+ <div class="form_row">
+    <label for="city">Workplace:</label> 
+  	<%= form.text_field :city %>
+  </div>
+</fieldset>
+  <%= submit_tag "Update", :class => "submit" %> 
+<% end %>

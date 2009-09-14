@@ -1,0 +1,77 @@
+<div class="wrapper">    
+    <div class="contentHeadline">
+    	<span class="collumTopText">
+         Admin dashboard :: <%= @active_conference.title %> :: <%= current_user.full_name %>
+    	</span>
+    </div>
+</div>
+
+
+
+<div class="myWrapper">
+	<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
+	  <tr>
+		<th width="200">Neurodag Function</th>
+		<th>Units</th>
+	  </tr>
+
+	  <tr class="<%= cycle('odd', 'even') %>">
+			<td align="center">
+				<%= link_to 'Users', browse_all_path %> 
+			</td>
+			<td align="center">
+			<%= user_count%> 		</td>
+		</tr>
+	
+	  	<tr class="<%= cycle('odd', 'even') %>">
+			<td align="center">
+				<%= link_to 'Submitted talks', talks_path %> at <%= @active_conference.title %>
+			</td>
+			<td align="center">
+					<%= @active_conference.talk_count %>		</td>
+		</tr>
+
+	  	<tr class="<%= cycle('odd', 'even') %>">
+			<td align="center">
+				<%= link_to 'Pages', pages_path %>
+			</td>
+			<td align="center">
+				<%= page_count %></td>
+			</td>		
+		</tr>
+
+		<tr class="<%= cycle('odd', 'even') %>">
+			<td align="center">
+				<%= link_to 'Participants', registrations_path %> at <%= @active_conference.title %>
+			</td>
+		
+			<td align="center">
+				<%= @active_conference.attendant_count %>		</td>
+			</td>
+		</tr>
+		
+		<tr class="<%= cycle('odd', 'even') %>">
+			<td align="center">
+				<%= link_to 'Blogs', blogs_path %>
+			</td>
+			<td align="center">
+			<%= blog_count %>	</td>
+		</tr>
+		
+		<tr class="<%= cycle('odd', 'even') %>">		
+			<td align="center">
+				<%= link_to 'Posters', posters_path %> at <%= @active_conference.title %><br>
+			</td>
+			<td align="center">
+			<%= @active_conference.poster_count %>	</td>
+		</tr>
+
+		<tr class="<%= cycle('odd', 'even') %>">		
+			<td align="center">
+				<%= link_to 'Conferences', conferences_path %><br>
+			</td>
+			<td align="center">
+				<% u=Conference.find(:all) %> <%=u.size%>		</td>	
+		</tr>
+	</table>
+</div>

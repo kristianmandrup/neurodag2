@@ -1,0 +1,64 @@
+
+<div class="wrapper">    
+    <div class="contentHeadline">
+    	<span class="collumTopText">
+        Referee dashboard :: <%= current_user.full_name %>
+    	</span>
+    </div>
+</div>
+
+<div class="myWrapper">
+
+	<h2>Manage</h2>
+
+<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
+  <tr>
+	<th width="400">Neurodag Function</th>
+	<th>Units</th>
+  </tr>
+
+  <tr class="<%= cycle('odd', 'even') %>">
+		<td align="left">
+			<%= link_to 'All Users', browse_all_path %> 
+		</td>
+		<td align="center">
+		<% u=User.find(:all) %> <%=u.size%>		</td>
+	</tr>
+
+	<tr class="<%= cycle('odd', 'even') %>">
+		<td align="left">
+			<%= link_to 'Participants in conference', registrations_path %>
+		</td>		
+		<td align="center">
+			<%= @active_conference.attendant_count %>		</td>
+		</td>
+	</tr>
+	<tr class="<%= cycle('odd', 'even') %>">		
+		<td align="left">
+			<%= link_to 'Posters', posters_path %><br>
+		</td>
+		<td align="center">
+		<%= @active_conference.poster_count %>	</td>
+	</tr>
+	
+  	<tr class="<%= cycle('odd', 'even') %>">
+		<td align="left">
+			<%= link_to 'Submitted talks - pending your rating', referee_talks_path %>
+		</td>
+		<td align="center">
+				<%= @active_conference.talk_count %>		</td>		
+	</tr>
+
+  	<tr class="<%= cycle('odd', 'even') %>">
+		<td align="left">
+			<%= link_to 'Submitted talks rated by all referees', all_ref_rated_talks_path %>
+		</td>
+		<td align="center">
+				<%= @active_conference.talk_count %>		</td>		
+	</tr>	
+</table>
+</div>
+
+
+
+

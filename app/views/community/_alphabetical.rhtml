@@ -1,0 +1,19 @@
+
+
+
+<div class="post">
+	<div class="post-bgtop">
+		<div class="post-bgbtm">
+			<h1 class="title"><a href="#">Alphabetical Index</a></h1>
+			<div class="entry">
+				<% @letters.each do |letter| %>
+				<% letter_class = (letter == @initial) ? "letter_current" : "letter" %>
+				<%= link_to(letter, { :action => "index", :id => letter },
+				                    :class => letter_class) %>
+				<% end %>
+				  <br clear="all" />
+
+			</div>
+		</div>
+	</div>
+</div>

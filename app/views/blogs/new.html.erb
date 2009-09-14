@@ -1,0 +1,14 @@
+<h2>New blog</h2>
+<%= error_messages_for :blog %>
+
+<% form_for(@blog) do |form| %>
+  <fieldset>
+	<legend>Blog</legend>
+	  <%= render :partial => "form", :locals => { :form => form } %>
+	  <%= hidden_field_tag "parent_id", @parent_blog_id %>
+	  <%= hidden_field_tag "conference_id", @conference_id %>
+	  <%= submit_tag "Create", :class => "submit" %> 
+  </fieldset>
+<% end %>
+
+<%= link_to 'Back', blogs_path %>

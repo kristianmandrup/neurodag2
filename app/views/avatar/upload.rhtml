@@ -1,0 +1,23 @@
+<h2>Upload your Avatar</h2>
+<br>
+<% form_tag("upload", :multipart => true) do %>
+ 
+  <%= error_messages_for 'avatar' %>
+<fieldset>
+	<legend>Upload file</legend>
+  <% if @user.avatar.exists? %>
+  <div class="form_row">
+    <label for="current_avatar">Avatar:</label>
+    <%= avatar_tag(@user) %>
+  </div>
+  <% end %>
+  <div class="form_row">
+    <label for="new_avatar">New Avatar:</label>
+    <%= file_field "avatar", "image" %>
+  </div>
+</fieldset>
+  <%= submit_tag "Upload Avatar", :class => "submit" %> 
+  <%= link_to "delete", { :action => "delete" }, 
+                         :confirm => "Are you sure?" %>
+
+<% end %>

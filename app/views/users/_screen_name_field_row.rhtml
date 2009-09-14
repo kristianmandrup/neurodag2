@@ -1,0 +1,6 @@
+<p>
+  <label for="screen_name">User name</label> 
+  <%= form.text_field :screen_name,
+                      :size => User::SCREEN_NAME_SIZE,
+                      :maxlength => User::SCREEN_NAME_MAX_LENGTH %>
+</p>                    

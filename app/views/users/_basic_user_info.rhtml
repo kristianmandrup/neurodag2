@@ -1,0 +1,21 @@
+<div class="sidebar_box">
+    <span class="header">Basic User Info</span>
+    <span class="edit_link"><%= link_to "(edit)", edit_user_path(current_user) %></span>	    
+    <br clear="all">
+  <div class="faq_answer">
+      <table>
+        <tr>
+          <td class="label">Full name</td>
+          <td><%= @user.full_name %></td>
+        </tr>
+        <tr>
+          <td class="label">Screen name</td>
+          <td><%= @user.screen_name %></td>
+        </tr>
+        <tr>
+          <td class="label">Email</td>
+          <td><%= @user.email %></td>
+        </tr>
+      </table>  
+  </div>
+</div>

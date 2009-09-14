@@ -1,0 +1,11 @@
+<%= error_messages_for :poster %>
+
+<%= text_field_for form, "title", 69 %>
+<br/>
+<%= text_field_for form, "authors", 69 %>
+<br/>
+<div class="form_row">
+  <label for="abstract">Abstract:</label>
+  	<% use_tinymce -%>
+	<%= form.text_area :abstract, :rows => 20, :cols => 60, :class => "mce-editor" %>
+</div>

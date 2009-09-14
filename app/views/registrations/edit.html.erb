@@ -1,0 +1,24 @@
+<div class="wrapper">    
+    <div class="contentHeadline">
+    	<span class="collumTopText">
+        Edit Registration for <%= @active_conference.title %>
+    	</span>
+    </div>
+</div>
+
+<div class="myWrapper">
+	<span class="header"> Registration Open september 10th, 2009 Please don't submit before!</span>
+	<br>
+	<% if @registration %>
+		<% form_for(@registration) do |form| %>
+			<%= render :partial => "form", :locals => {:form => form} %>
+			<br>
+			<%= submit_tag "Update"%>
+		<% end %>
+	<% end %>
+
+</div>
+
+
+
+

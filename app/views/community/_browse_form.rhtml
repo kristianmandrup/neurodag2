@@ -1,0 +1,16 @@
+<div class="post">
+	<div class="post-bgtop">
+		<div class="post-bgbtm">
+			<h1 class="title"><a href="#">Browse members</a></h1>
+			<div class="entry">
+				<% form_tag browse_all_path, :id => "searchForm", :method => "get" do %>
+							<input type="hidden" name="order" value="LastName">
+				   		<input type="submit" value="Browse by first name " onclick="browseAllBy('FirstName')" />
+				    	<input type="submit" value="Browse by last name " onclick="browseAllBy('LastName')" />
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+
+

@@ -1,0 +1,62 @@
+<div class="sidebar_left sidebar">
+	<ul class="sidebar">
+		<% if active_conference %>
+		<li class="first">
+      <div class="contentHeadlineSmallBlue170">
+      	<span class="collumTopText"><%= active_conference.title unless active_conference == nil %></span>
+      </div>		  			
+				<% if active_conference.pages %>
+					<ul>
+						<% active_conference.pages.each do |page| %>
+						<li>
+							<%= link_to page.title, page %>
+							 <!-- <span>Last update: <%#= page.updated_at.to_s(:vshort) %></span>  -->
+						</li>
+						<% end %>												
+				<% end %>
+				
+				<li>
+					<%= link_to "Participants", registrations_path %> (<%= @active_conference.attendant_count %>) 
+					<span> List of participants so far</span></li>
+				<li>
+					<%= link_to "Poster list", posters_path %> (<%= @active_conference.poster_count %>)  
+					<span> List gets updated currently</span>
+				</li>				
+				</ul>
+		</li>
+		<% end %>
+		<li>
+			<ul>
+				 <% if current_user %>
+           <div class="contentHeadlineSmallBlue170">
+           	<span class="collumTopText">Registration</span>
+           </div>		  			
+
+					<!-- if no registra.. for current user show new link, otherwise ...-->
+					<% if !@my_registration %>
+						<li><%= link_to "Register for neurodag", registrations_path, :method => 'post' %></li>
+					<% else %>
+					<li><%= link_to "Cancel registration", registration_path(attend_active_conference?), :method => 'delete' %> <span>Please let us know!</span></li>			
+					
+						<li><%= link_to 'Manage registration', registration_path(@my_registration) %> <span>Until  <%=conferenceregistration_deadline%>. </span></li>																						
+					<% end %>
+					<% if bringing_posters? %>
+						<li><%= link_to 'Manage posters', your_posters_path %> <span>Until  <%=conferenceregistration_deadline%>. </span></li>																													
+					<% end %>
+
+					<% if compete_in_active_conference? %>
+						<% if @my_talk %>
+							<li><%= link_to 'Manage talk', talk_path(@my_talk) %> <span>Util October 15th </span></li>																													
+						<% else %>
+							<li><%= link_to 'Add talk', new_talk_path %> <span>Until <%=competition_deadline%>. </span></li>																																					
+						<% end %>
+					<% end %>
+
+				<% end %>							
+			</ul>
+		</li>
+		<%#= render :partial => 'blogs' %>
+		<%#= render :partial => '/shared/archives' %>
+	</ul>
+</div>
+

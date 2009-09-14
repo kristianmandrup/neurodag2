@@ -1,0 +1,39 @@
+<div class="wrapper">    
+    <div class="contentHeadline">
+    	<span class="collumTopText">
+        Listing blogs
+    	</span>
+    </div>
+</div>
+
+<div class="myWrapper">
+<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
+  <tr>
+	<th>Title</th>
+	<th>Owner</th>
+	<th>Submitted at</th><th></th><th></th><th></th>
+  </tr>	
+<% for blog in @blogs %>
+  <tr class="<%= cycle('odd', 'even') %>">
+	<td><%= blog.title %></td>
+	<td><%= blog.owner %></td>
+	<td><%= blog.created_at.to_s(:vshort) %></td>
+    <td><%= link_to 'Show', blog %></td>
+    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+    <td><%= link_to 'Destroy', blog, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<div class="digg_pagination">
+  <div clas="page_info">
+    <%= page_entries_info @blogs %>
+  </div>
+  <%= will_paginate @blogs, :container => false %>
+</div>
+
+
+<br />
+<%= link_to 'New blog', new_blog_path %>
+</div>

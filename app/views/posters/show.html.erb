@@ -1,0 +1,37 @@
+<%= flash[:notice]%> 
+
+<div class="myWrapper">
+
+		<% if @poster %>
+		<h1><%= h @poster.title %></h1>
+			<p>
+				<%= h @poster.authors %> |<i> Poster submitted by </i> <%= link_to(@poster.owner.full_name, profile_path(@poster.owner.screen_name)) if @poster.owner %> <i> on <%= h @poster.updated_at.to_s(:article) %></i>
+			</p>
+			<p>
+				<%= @poster.abstract %>
+			</p>
+		<br />
+		<br>
+	
+		<% if @poster.owner != current_user %>
+			Rate this poster:
+		<div class="rating" style="width:52px">
+			<%= ratings_for @poster, :dimension => :research, :small_stars => true %> 
+			<span id="poster-<%= @poster.id %>-research_avg">
+				Average: <%= @poster.rate_average(true, :research) %>
+			</span>
+		</div>
+		<% end%>
+
+		<br>
+		<% if (current_user && (@poster.owner == current_user)) != (is_admin?) %>
+				<%= link_to 'Destroy', @poster, :confirm => 'Are you sure?', :method => :delete %> |
+				<%= link_to 'Edit', edit_poster_path(@poster) %> |
+				<%= link_to 'All your posters', your_posters_path %>
+		<% else %>
+			    <td><%= link_to 'Back to all posters', posters_path %></td>
+
+		<% end %>
+		<% end %>
+		
+</div>

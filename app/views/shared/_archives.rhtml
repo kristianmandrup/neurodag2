@@ -1,0 +1,24 @@
+<li>
+  <div class="contentHeadlineSmallBlue170">
+  	<span class="collumTopText">Conference Archive</span>
+  </div>		  			
+	<ul>
+	  <% if @past_conferences %>
+		<% @past_conferences.each do |conf| %>
+		<li><%= link_to conf.title, conference_path(conf)%>
+			<span><%= h conf.date || 'unknown date' %></span>
+			<% if sidebar_conference == conf %>
+				<% if sidebar_conference.pages %>
+					<ul>
+						<% sidebar_conference.pages.each do |page| %>
+						<li><%= link_to page.title, page %></li>
+						<% end %>
+					</ul>												
+				<% end %>
+			<% end %>
+		</li>
+		<% end %>
+		<% end %>
+		<li><%= link_to 'All conferences', conferences_path%></li>
+	</ul>
+</li>				

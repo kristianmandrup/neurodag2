@@ -1,0 +1,26 @@
+
+
+<div class="post">
+	<div class="post-bgtop">
+		<div class="post-bgbtm">
+			<h1 class="title"><a href="#">Edit Page</a></h1>
+			<div class="entry">
+				<%= error_messages_for :pages %>
+				<% use_tinymce -%>
+
+				<% form_for(@page) do |form| %>
+				  <p>
+					  <%= render :partial => "form", :locals => { :form => form } %>
+					  <%= submit_tag "Update", :class => "submit" %> 
+				  </p>
+				<% end %>
+
+				<%= link_to 'Show', @page %> |
+				<%= link_to 'Back', pages_path %>
+
+
+			</div>
+		</div>
+	</div>
+</div>
+

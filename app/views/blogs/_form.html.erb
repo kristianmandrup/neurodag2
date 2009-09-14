@@ -1,0 +1,8 @@
+<div class="form_row">
+	<%= text_field_for form, "title", 70 %>
+</div>
+<div class="form_row">
+  <label for="body">Body:</label>
+	<% use_tinymce -%>
+  	<%= form.text_area :body, :rows => 16, :cols => 60, :class => "mce-editor" %>
+</div>

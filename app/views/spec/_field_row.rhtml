@@ -1,0 +1,7 @@
+<% spec = @user.spec[field_row] %>
+<% if spec && !spec.blank? %>
+<tr>
+  <td class="label"><%= field_row.humanize %>:</td>
+  <td><%= h spec %></td>
+</tr>
+<% end %>

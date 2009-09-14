@@ -1,0 +1,15 @@
+<h1><%= h @conference.title %></h1>
+<i> Date: <%= h @conference.year %></i>
+<p>
+	<%= @conference.venue %>
+</p>
+<p>
+	Venue: <%= @conference.description %>
+</p>
+<br />
+<br>
+<% if is_admin? %>
+		<%= link_to 'Destroy', @conference, :confirm => 'Are you sure?', :method => :delete %> |
+		<%= link_to 'Edit', edit_conference_path(@conference) %> |
+
+<% end %>

@@ -1,0 +1,21 @@
+
+<div class="post">
+	<div class="post-bgtop">
+		<div class="post-bgbtm">
+			<h1 class="title">Editing Talk</h1>
+			<div class="entry">
+
+				<%= error_messages_for :talk %>
+
+				<% form_for(@talk) do |form| %>
+				  <%= render :partial => "form", :locals => { :form => form } %>
+				  <p>
+				    <%= form.submit "Update" %>
+				  </p>
+				<% end %>
+
+				<%#= link_to 'Show', @talk %>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,24 @@
+
+<div class="myWrapper">
+	<h1><%= h @title %></h1>
+		<p>
+		<i> by </i> <%= link_to @owner.full_name, profile_path(@owner.screen_name) %><%= @owner.title %>|<i> Subitted on	<%= h @talk.updated_at.to_s(:article) %> for participation in the presentation competition.</i><br><br></p>
+
+		<p> <b>Abstract: </b>
+			<%= @abstract %>
+		</p>
+
+	<br>
+
+
+	<% if is_special_role? %>
+			<%= link_to 'Back to list of talks', referee_talks_path %>
+	<% end %>
+
+
+	<% if @talk.owner == current_user %>
+			<%= link_to 'Destroy', @talk, :confirm => 'Are you sure?', :method => :delete %> |
+			<%= link_to 'Edit', edit_talk_path(@talk) %>
+	<% end %>
+
+</div>
