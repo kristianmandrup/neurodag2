@@ -7,33 +7,35 @@
 </div>
 
 
-
+<% conf_title = @active_conference.title %>
 <div class="myWrapper">
 	<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
+	  <thead>
 	  <tr>
-		<th width="200">Neurodag Function</th>
-		<th>Units</th>
+		  <th width="200" class="name">Neurodag function</th>
+		  <th>Units</th>
 	  </tr>
-
+    </thead>
+    <tbody>
 	  <tr class="<%= cycle('odd', 'even') %>">
-			<td align="center">
-				<%= link_to 'Users', browse_all_path %> 
+			<td>
+				<%= link_to "Users", browse_all_path %> 
 			</td>
 			<td align="center">
 			<%= user_count%> 		</td>
 		</tr>
 	
 	  	<tr class="<%= cycle('odd', 'even') %>">
-			<td align="center">
-				<%= link_to 'Submitted talks', talks_path %> at <%= @active_conference.title %>
+			<td>
+				<%= link_to "Submitted talks", talks_path %> 
 			</td>
 			<td align="center">
 					<%= @active_conference.talk_count %>		</td>
 		</tr>
 
 	  	<tr class="<%= cycle('odd', 'even') %>">
-			<td align="center">
-				<%= link_to 'Pages', pages_path %>
+			<td>
+				<%= link_to "Pages", pages_path %>
 			</td>
 			<td align="center">
 				<%= page_count %></td>
@@ -41,8 +43,8 @@
 		</tr>
 
 		<tr class="<%= cycle('odd', 'even') %>">
-			<td align="center">
-				<%= link_to 'Participants', registrations_path %> at <%= @active_conference.title %>
+			<td>
+				<%= link_to "Participants", registrations_path %>
 			</td>
 		
 			<td align="center">
@@ -51,7 +53,7 @@
 		</tr>
 		
 		<tr class="<%= cycle('odd', 'even') %>">
-			<td align="center">
+			<td>
 				<%= link_to 'Blogs', blogs_path %>
 			</td>
 			<td align="center">
@@ -59,19 +61,20 @@
 		</tr>
 		
 		<tr class="<%= cycle('odd', 'even') %>">		
-			<td align="center">
-				<%= link_to 'Posters', posters_path %> at <%= @active_conference.title %><br>
+			<td>
+				<%= link_to "Posters", posters_path %>
 			</td>
 			<td align="center">
 			<%= @active_conference.poster_count %>	</td>
 		</tr>
 
 		<tr class="<%= cycle('odd', 'even') %>">		
-			<td align="center">
+			<td>
 				<%= link_to 'Conferences', conferences_path %><br>
 			</td>
 			<td align="center">
 				<% u=Conference.find(:all) %> <%=u.size%>		</td>	
 		</tr>
+		</tbody>
 	</table>
 </div>

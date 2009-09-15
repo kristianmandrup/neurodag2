@@ -106,7 +106,12 @@ module AjaxfulRating # :nodoc:
     end
 
     def stars_by(user, dimension = nil)
-      rate_by(user, dimension).stars
+      rate = rate_by(user, dimension)
+      if rate
+        rate.stars
+      else
+        0
+      end
     end
 
     # Instance's total rates.

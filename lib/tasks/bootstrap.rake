@@ -17,9 +17,11 @@ namespace :bootstrap do
     desc "Create the default talks"
     task :default_talks => :environment do
       Talk.delete_all
-      Talk.create(:title => 'Talk 1 - user',  :abstract => "My talk 1", :user_id => User.find_by_screen_name('user').id,:conference_id => Conference.first.id )
-      Talk.create(:title => 'Talk 2 - admin', :abstract => "My talk 2", :user_id => User.find_by_screen_name('rune').id,:conference_id => Conference.first.id )
-      Talk.create(:title => 'Talk 3 - user2', :abstract => "My talk 2", :user_id => User.find_by_screen_name('user2').id,:conference_id => Conference.first.id )
+      Talk.create(:title => 'Talk 1',  :abstract => "My talk 1", :user_id => User.find_by_screen_name('user').id,:conference_id => Conference.first.id )
+      Talk.create(:title => 'Talk 2', :abstract => "My talk 2", :user_id => User.find_by_screen_name('rune').id,:conference_id => Conference.first.id )
+      Talk.create(:title => 'Talk 3', :abstract => "My talk 3", :user_id => User.find_by_screen_name('user2').id,:conference_id => Conference.first.id )
+      Talk.create(:title => 'Talk 4', :abstract => "My talk 4", :user_id => User.find_by_screen_name('rune').id,:conference_id => Conference.first.id )
+      Talk.create(:title => 'Talk 5', :abstract => "My talk 5", :user_id => User.find_by_screen_name('user2').id,:conference_id => Conference.first.id )
     end
 
     desc "Create the default registrations"

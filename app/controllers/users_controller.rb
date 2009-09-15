@@ -12,15 +12,15 @@ class UsersController < ApplicationController
     @ref_talks.compact!
     
     @ref_talks_research = @ref_talks.sort do |t2, t1|
-      t1.stars_by(@user, :research).stars  <=> t2.stars_by(@user, :research).stars
+      t1.stars_by(@user, :research)  <=> t2.stars_by(@user, :research)
     end
 
     @ref_talks_presentation_style = @ref_talks.sort do |t2, t1|
-      t1.stars_by(@user, :presentation_style)  <=> t2.stars_by(@user, :presentation_style).stars
+      t1.stars_by(@user, :presentation_style)  <=> t2.stars_by(@user, :presentation_style)
     end
     
     @ref_talks_organization = @ref_talks.sort do |t2, t1|
-      t1.stars_by(@user, :organization).stars  <=> t2.stars_by(@user, :organization).stars
+      t1.stars_by(@user, :organization)  <=> t2.stars_by(@user, :organization)
     end
     
   end

@@ -8,6 +8,11 @@ class Talk < ActiveRecord::Base
   def owner
     user
   end
+
+  def owner_name
+    user.full_name
+  end
+
     
   def owner=(u)
     user = u

@@ -9,14 +9,15 @@
 
 <div class="myWrapper">
 
-	<h2>Manage</h2>
-
 <table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
+  <thead>
   <tr>
-	<th width="400">Neurodag Function</th>
-	<th>Units</th>
+	  <th width="400" class="name">Neurodag Function</th>
+	  <th>Units</th>
   </tr>
-
+  </thead>
+  
+  <tbody>
   <tr class="<%= cycle('odd', 'even') %>">
 		<td align="left">
 			<%= link_to 'All Users', browse_all_path %> 
@@ -56,6 +57,7 @@
 		<td align="center">
 				<%= @active_conference.talk_count %>		</td>		
 	</tr>	
+  </tbody>	
 </table>
 </div>
 
