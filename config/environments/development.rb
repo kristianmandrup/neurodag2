@@ -21,8 +21,8 @@ config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
   :address        => "smtp.gmail.com",
   :port           => 587,
-  :domain         => "kmandrup@gmail.com",
+  :domain         => "neurodag.rberg@gmail.com",
   :authentication => :plain,
-  :user_name      => "kmandrup",
-  :password       => "jerk4243" 
+  :user_name      => "neurodag.rberg",
+  :password       => "eyrzfp4yuspxeyrzfp4yuspx" 
 }

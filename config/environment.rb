@@ -57,14 +57,7 @@ Time::DATE_FORMATS[:article] = "%A, %B %d, %Y"
 
 Time::DATE_FORMATS[:no_weekday] = "%B %d, %Y"
 
-ActionMailer::Base.delivery_method = :smtp
-ActionMailer::Base.smtp_settings = { 
-  :address    => "smtp.gmail.com",
-  :port       => 587,
-  :authentication => :plain,
-  :user_name => "rune2earth@gmail.com",
-  :domain     => "railsspace.com" 
-  }
+# require 'smtp_tls'      
   
   if ENV['RAILS_ENV']
      require 'hirb'

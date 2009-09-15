@@ -33094,3 +33094,1219 @@ ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:
   
 
 Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing UsersController#show_rated_talks (for 127.0.0.1 at 2009-09-15 13:51:45) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+#<User:0x2479f6c>
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mBlog Load (1.0ms)[0m   [0mSELECT * FROM `blogs` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.8ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mConference Load (0.7ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (1.0ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` = 6) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mTalk Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `talks`[0m
+  [4;36;1mTalk Load (1.0ms)[0m   [0;1mSELECT * FROM `talks` WHERE (`talks`.`conference_id` = 2 AND `talks`.`user_id` = 6) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mTalk Load (3.5ms)[0m   [0mSELECT DISTINCT r2.* FROM rates r1 INNER JOIN talks r2 ON r1.rateable_id = r2.id WHERE (r1.rateable_type = 'Talk' AND r1.user_id = 6)[0m
+  [4;36;1mRate Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `rates`[0m
+  [4;35;1mRate Load (0.7ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'research')) LIMIT 1[0m
+  [4;36;1mRate Load (0.6ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 4 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'research')) LIMIT 1[0m
+  [4;35;1mRate Load (0.5ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 8 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'research')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'research')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'research')) LIMIT 1[0m
+  [4;36;1mRate Load (0.5ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 5 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'research')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'research')) LIMIT 1[0m
+  [4;36;1mRate Load (0.5ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 7 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'research')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 4 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'research')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 5 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'research')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 7 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'research')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 8 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'research')) LIMIT 1[0m
+  [4;35;1mRate Load (0.6ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'presentation_style')) LIMIT 1[0m
+  [4;36;1mRate Load (0.5ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 4 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'presentation_style')) LIMIT 1[0m
+  [4;35;1mRate Load (0.5ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 8 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'presentation_style')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'presentation_style')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'presentation_style')) LIMIT 1[0m
+  [4;36;1mRate Load (0.5ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 5 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'presentation_style')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'presentation_style')) LIMIT 1[0m
+  [4;36;1mRate Load (0.6ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 7 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'presentation_style')) LIMIT 1[0m
+  [4;35;1mRate Load (0.5ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'organization')) LIMIT 1[0m
+  [4;36;1mRate Load (0.5ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 4 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'organization')) LIMIT 1[0m
+  [4;35;1mRate Load (6.4ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 8 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'organization')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'organization')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'organization')) LIMIT 1[0m
+  [4;36;1mRate Load (0.5ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 5 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'organization')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'organization')) LIMIT 1[0m
+  [4;36;1mRate Load (0.5ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 7 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'organization')) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering users/show_rated_talks
+Rendered shared/_title_bar (0.4ms)
+Rendered shared/_notice (0.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 8 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'research')) LIMIT 1[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 7 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'research')) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'research')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 5 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'research')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 4 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'research')) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 4 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'presentation_style')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 5 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'presentation_style')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'presentation_style')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 7 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'presentation_style')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 8 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'presentation_style')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 4 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'organization')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 5 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'organization')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'organization')) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 7 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'organization')) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `rates` WHERE (`rates`.`user_id` = 6) AND (`rates`.rateable_id = 8 AND `rates`.rateable_type = 'Talk' AND (`rates`.`dimension` = 'organization')) LIMIT 1[0m
+Rendered shared/_javascripts (1.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered shared/_topmenu (5.1ms)
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.conference_id = 2) [0m
+  [4;35;1mPage Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 2)) [0m
+  [4;35;1mPoster Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `posters`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` = 6) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` = 6) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` = 6) LIMIT 1[0m
+Rendered shared/_sidebar (29.0ms)
+Rendered shared/_news (0.4ms)
+Rendered shared/_archives (0.9ms)
+Rendered shared/_sidebar_right (7.4ms)
+Completed in 267ms (View: 72, DB: 48) | 200 OK [http://localhost/users/show_rated_talks/6]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:51:47) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/builder.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:51:47) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/slider.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:51:47) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:51:48) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/slider.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:51:48) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-09-15 13:51:51) [GET]
+  [4;35;1mUser Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+#<User:0x23f5ba4>
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mBlog Load (1.6ms)[0m   [0mSELECT * FROM `blogs` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.9ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mConference Load (0.6ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (0.7ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` = 6) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mTalk Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `talks`[0m
+  [4;36;1mTalk Load (0.8ms)[0m   [0;1mSELECT * FROM `talks` WHERE (`talks`.`conference_id` = 2 AND `talks`.`user_id` = 6) LIMIT 1[0m
+PROTECT
+LOGGED IN
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mSpec Load (1.4ms)[0m   [0;1mSELECT * FROM `specs` WHERE (`specs`.user_id = 6) LIMIT 1[0m
+  [4;35;1mSpec Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `specs`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `specs` WHERE (`specs`.user_id = 6) LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mFaq Load (1.0ms)[0m   [0mSELECT * FROM `faqs` WHERE (`faqs`.user_id = 6) LIMIT 1[0m
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM `blogs` WHERE (`blogs`.user_id = 6) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering users/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered users/_basic_user_info (1.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mFaq Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `faqs`[0m
+Rendered shared/_sidebar_box_basic (0.7ms)
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.friend_id WHERE ((`friendships`.user_id = 6) AND ((status = 'accepted'))) [0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT `users`.* FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.friend_id WHERE ((`friendships`.user_id = 6) AND ((status = 'accepted'))) ORDER BY screen_name[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.friend_id WHERE ((`friendships`.user_id = 6) AND ((status = 'requested'))) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.friend_id WHERE ((`friendships`.user_id = 6) AND ((status = 'pending'))) [0m
+Rendered friendship/_friends (11.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered shared/_sidebar_box_noedit (0.5ms)
+Rendered users/_main_content (25.5ms)
+Rendered spec/_field_row (0.5ms)
+Rendered spec/_field_row (0.1ms)
+Rendered spec/_field_row (0.1ms)
+Rendered spec/_field_row (0.1ms)
+Rendered users/_user_spec (4.5ms)
+Rendered avatar/_sidebar_box (3.5ms)
+Rendered faq/_sidebar_box (23.9ms)
+Rendered faq/_sidebar_box (0.3ms)
+Rendered faq/_sidebar_box (0.2ms)
+Rendered faq/_sidebar_box (0.2ms)
+Rendered faq/_sidebar_box (0.2ms)
+Rendered profile/_blog (0.4ms)
+  [4;35;1mBlog Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+Rendered shared/_sidebar_box_basic (0.1ms)
+Rendered shared/_javascripts (0.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+Rendered shared/_topmenu (3.9ms)
+  [4;35;1mPage Load (2.3ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.conference_id = 2) [0m
+  [4;36;1mPage Columns (7.4ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 2)) [0m
+  [4;36;1mPoster Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `posters`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` = 6) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` = 6) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` = 6) LIMIT 1[0m
+Rendered shared/_sidebar (34.4ms)
+Rendered shared/_news (0.0ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (0.6ms)
+Completed in 307ms (View: 142, DB: 48) | 200 OK [http://localhost/user]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:51:53) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/builder.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:51:53) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/slider.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:51:53) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:51:53) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2009-09-15 13:52:06) [GET]
+  [4;35;1mUser Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+#<User:0x2429080>
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mBlog Load (0.7ms)[0m   [0mSELECT * FROM `blogs` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.7ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mConference Load (0.5ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (1.4ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` = 6) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;35;1mTalk Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `talks`[0m
+  [4;36;1mTalk Load (0.8ms)[0m   [0;1mSELECT * FROM `talks` WHERE (`talks`.`conference_id` = 2 AND `talks`.`user_id` = 6) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 118ms (DB: 16) | 302 Found [http://localhost/logout]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing SiteController#index (for 127.0.0.1 at 2009-09-15 13:52:06) [GET]
+  Parameters: {"id"=>nil}
+  [4;36;1mBlog Load (0.6ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.7ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.6ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (1.2ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mTalk Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (0.9ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`conference_id` = 2 AND `talks`.`user_id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering site/index
+Rendered shared/_javascripts (0.5ms)
+Rendered shared/_topmenu (0.1ms)
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.conference_id = 2) [0m
+  [4;35;1mPage Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mUser Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 2)) [0m
+  [4;36;1mPoster Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `posters`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 2) [0m
+Rendered shared/_sidebar (39.3ms)
+Rendered shared/_news (0.1ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (0.7ms)
+Completed in 87ms (View: 37, DB: 22) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:52:07) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/builder.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:52:07) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/slider.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:52:07) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:52:07) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-09-15 13:52:10) [GET]
+  [4;36;1mBlog Load (0.9ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.6ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mConference Load (1.1ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (1.5ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mTalk Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (2.1ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`conference_id` = 2 AND `talks`.`user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mUser Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering users/login
+Rendered users/_screen_name_field_row (3.3ms)
+Rendered users/_password_field_row (0.8ms)
+Rendered shared/_javascripts (0.5ms)
+Rendered shared/_topmenu (0.1ms)
+  [4;35;1mPage Load (0.8ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.conference_id = 2) [0m
+  [4;36;1mPage Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 2)) [0m
+  [4;36;1mPoster Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `posters`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 2) [0m
+Rendered shared/_sidebar (33.9ms)
+Rendered shared/_news (0.1ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (0.6ms)
+Completed in 183ms (View: 37, DB: 36) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:52:11) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/builder.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:52:11) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/slider.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:52:11) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:52:11) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing EmailController#remind (for 127.0.0.1 at 2009-09-15 13:52:17) [GET]
+  [4;36;1mBlog Load (1.3ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.9ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.6ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (0.7ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mTalk Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (1.0ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`conference_id` = 2 AND `talks`.`user_id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering email/remind
+Rendered shared/_javascripts (0.7ms)
+Rendered shared/_topmenu (0.2ms)
+  [4;36;1mPage Load (1.0ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.conference_id = 2) [0m
+  [4;35;1mPage Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mUser Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 2)) [0m
+  [4;36;1mPoster Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `posters`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 2) [0m
+Rendered shared/_sidebar (29.4ms)
+Rendered shared/_news (0.1ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (0.6ms)
+Completed in 106ms (View: 48, DB: 25) | 200 OK [http://localhost/email/remind]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:52:18) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/builder.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:52:19) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/slider.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:52:19) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:52:19) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing EmailController#remind (for 127.0.0.1 at 2009-09-15 13:52:27) [POST]
+  Parameters: {"commit"=>"Email Me!", "authenticity_token"=>"ojuVJe8zHxr83Uif75GJxzfvDuJsjiBU6MmAe8SkWqk=", "user"=>{"email"=>"kmandrup@gmail.com"}}
+  [4;36;1mBlog Load (1.4ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.7ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.5ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (0.7ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mTalk Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (0.9ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`conference_id` = 2 AND `talks`.`user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mUser Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = 'kmandrup@gmail.com') LIMIT 1[0m
+Rendering template within layouts/default
+Rendering email/remind
+Rendered shared/_javascripts (0.5ms)
+Rendered shared/_topmenu (0.1ms)
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.conference_id = 2) [0m
+  [4;35;1mPage Columns (3.8ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 2)) [0m
+  [4;35;1mPoster Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `posters`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 2) [0m
+Rendered shared/_sidebar (86.1ms)
+Rendered shared/_news (0.1ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (0.7ms)
+Completed in 155ms (View: 81, DB: 26) | 200 OK [http://localhost/email/remind]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:52:28) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/builder.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:52:28) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/slider.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:52:28) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:52:28) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing EmailController#remind (for 127.0.0.1 at 2009-09-15 13:56:24) [GET]
+  [4;35;1mBlog Load (0.8ms)[0m   [0mSELECT * FROM `blogs` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;36;1mConference Load (1.1ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;35;1mConference Load (1.0ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;36;1mRegistration Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `registrations`[0m
+  [4;35;1mConference Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `conferences`[0m
+  [4;36;1mRegistration Load (0.8ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mTalk Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `talks`[0m
+  [4;36;1mTalk Load (1.1ms)[0m   [0;1mSELECT * FROM `talks` WHERE (`talks`.`conference_id` = 2 AND `talks`.`user_id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering email/remind
+Rendered shared/_title_bar (0.1ms)
+Rendered shared/_notice (0.1ms)
+Rendered shared/_javascripts (0.6ms)
+Rendered shared/_topmenu (0.2ms)
+  [4;35;1mPage Load (1.0ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.conference_id = 2) [0m
+  [4;36;1mPage Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 2)) [0m
+  [4;35;1mPoster Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `posters`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 2) [0m
+Rendered shared/_sidebar (23.1ms)
+Rendered shared/_news (0.0ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (0.6ms)
+Completed in 175ms (View: 35, DB: 23) | 200 OK [http://localhost/email/remind]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:56:25) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/builder.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:56:25) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/slider.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:56:25) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing EmailController#remind (for 127.0.0.1 at 2009-09-15 13:56:27) [GET]
+  [4;35;1mBlog Load (1.0ms)[0m   [0mSELECT * FROM `blogs` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;36;1mConference Load (2.0ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.8ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;36;1mRegistration Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `registrations`[0m
+  [4;35;1mConference Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `conferences`[0m
+  [4;36;1mRegistration Load (0.7ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mTalk Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `talks`[0m
+  [4;36;1mTalk Load (0.8ms)[0m   [0;1mSELECT * FROM `talks` WHERE (`talks`.`conference_id` = 2 AND `talks`.`user_id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering email/remind
+Rendered shared/_title_bar (0.1ms)
+Rendered shared/_notice (0.1ms)
+Rendered shared/_javascripts (0.5ms)
+Rendered shared/_topmenu (0.2ms)
+  [4;35;1mPage Load (0.9ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.conference_id = 2) [0m
+  [4;36;1mPage Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 2)) [0m
+  [4;35;1mPoster Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `posters`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 2) [0m
+Rendered shared/_sidebar (27.7ms)
+Rendered shared/_news (0.1ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (0.7ms)
+Completed in 154ms (View: 33, DB: 25) | 200 OK [http://localhost/email/remind]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:56:28) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/builder.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:56:28) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/slider.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:56:28) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:56:28) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/slider.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:56:29) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing UsersController#register (for 127.0.0.1 at 2009-09-15 13:56:37) [GET]
+  [4;36;1mBlog Load (0.8ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.7ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.8ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (1.4ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mTalk Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (1.3ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`conference_id` = 2 AND `talks`.`user_id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering users/register
+Rendered shared/_title_bar (0.1ms)
+Rendered shared/_notice (0.1ms)
+Rendered users/_screen_name_field_row (21.8ms)
+Rendered users/_email_field_row (0.6ms)
+Rendered users/_password_field_row (0.1ms)
+Rendered users/_form (27.0ms)
+Rendered shared/_javascripts (0.5ms)
+Rendered shared/_topmenu (0.2ms)
+  [4;36;1mPage Load (2.2ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.conference_id = 2) [0m
+  [4;35;1mPage Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mUser Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 2)) [0m
+  [4;36;1mPoster Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `posters`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 2) [0m
+Rendered shared/_sidebar (39.7ms)
+Rendered shared/_news (0.1ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (0.6ms)
+Completed in 177ms (View: 123, DB: 28) | 200 OK [http://localhost/register]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:56:39) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/builder.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:56:39) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/slider.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:56:39) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:56:39) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing UsersController#register (for 127.0.0.1 at 2009-09-15 13:56:59) [POST]
+  Parameters: {"commit"=>"OK", "authenticity_token"=>"ojuVJe8zHxr83Uif75GJxzfvDuJsjiBU6MmAe8SkWqk=", "user"=>{"last_name"=>"M", "password"=>"1234", "email"=>"kmandrup@gmail.com", "first_name"=>"K", "screen_name"=>"Kristian"}}
+  [4;36;1mBlog Load (1.0ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.8ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.8ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (1.3ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mTalk Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (1.4ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`conference_id` = 2 AND `talks`.`user_id` IS NULL) LIMIT 1[0m
+  [4;36;1mUser Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSpec Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `specs`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'Kristian') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'kmandrup@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO `users` (`created_at`, `updated_at`, `role`, `last_name`, `password`, `screen_name`, `email`, `authorization_token`, `first_name`) VALUES('2009-09-15 13:56:59', '2009-09-15 13:56:59', NULL, 'M', '1234', 'Kristian', 'kmandrup@gmail.com', NULL, 'K')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed in 78ms (DB: 23) | 302 Found [http://localhost/register]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-09-15 13:57:00) [GET]
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+#<User:0x26d2c8c>
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;36;1mBlog Load (0.6ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.7ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;35;1mConference Load (0.7ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;36;1mRegistration Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `registrations`[0m
+  [4;35;1mConference Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `conferences`[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` = 9) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;36;1mTalk Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (1.3ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`conference_id` = 2 AND `talks`.`user_id` = 9) LIMIT 1[0m
+PROTECT
+LOGGED IN
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;35;1mSpec Load (0.7ms)[0m   [0mSELECT * FROM `specs` WHERE (`specs`.user_id = 9) LIMIT 1[0m
+  [4;36;1mSpec Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `specs`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `specs` WHERE (`specs`.user_id = 9) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mFaq Load (0.9ms)[0m   [0;1mSELECT * FROM `faqs` WHERE (`faqs`.user_id = 9) LIMIT 1[0m
+  [4;35;1mFaq Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `faqs`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `faqs` WHERE (`faqs`.user_id = 9) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mFaq Create (0.6ms)[0m   [0;1mINSERT INTO `faqs` (`created_at`, `schools`, `short_cv`, `selected_papers`, `job_advertisement`, `updated_at`, `books_written`, `companies`, `user_id`, `work_experience`) VALUES('2009-09-15 13:57:00', '', '', '', '', '2009-09-15 13:57:00', NULL, '', 9, '')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mBlog Load (0.5ms)[0m   [0;1mSELECT * FROM `blogs` WHERE (`blogs`.user_id = 9) LIMIT 1[0m
+  [4;35;1mBlog Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `blogs` WHERE (`blogs`.user_id = 9) LIMIT 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mBlog Create (0.6ms)[0m   [0;1mINSERT INTO `blogs` (`created_at`, `title`, `body`, `updated_at`, `user_id`, `conference_id`) VALUES('2009-09-15 13:57:00', NULL, NULL, '2009-09-15 13:57:00', 9, NULL)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/default
+Rendering users/index
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+Rendered users/_basic_user_info (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+Rendered shared/_sidebar_box_basic (0.1ms)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.friend_id WHERE ((`friendships`.user_id = 9) AND ((status = 'accepted'))) [0m
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT `users`.* FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.friend_id WHERE ((`friendships`.user_id = 9) AND ((status = 'accepted'))) ORDER BY screen_name[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.friend_id WHERE ((`friendships`.user_id = 9) AND ((status = 'requested'))) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.friend_id WHERE ((`friendships`.user_id = 9) AND ((status = 'pending'))) [0m
+Rendered friendship/_friends (10.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+Rendered shared/_sidebar_box_noedit (0.1ms)
+Rendered users/_main_content (11.9ms)
+Rendered spec/_field_row (0.1ms)
+Rendered spec/_field_row (0.1ms)
+Rendered spec/_field_row (0.1ms)
+Rendered spec/_field_row (0.1ms)
+Rendered users/_user_spec (1.3ms)
+Rendered avatar/_sidebar_box (2.8ms)
+Rendered faq/_sidebar_box (0.2ms)
+Rendered faq/_sidebar_box (0.2ms)
+Rendered faq/_sidebar_box (0.2ms)
+Rendered faq/_sidebar_box (0.2ms)
+Rendered faq/_sidebar_box (0.2ms)
+Rendered profile/_blog (0.1ms)
+Rendered shared/_sidebar_box_basic (0.1ms)
+Rendered shared/_javascripts (0.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+Rendered shared/_topmenu (5.9ms)
+  [4;36;1mPage Load (1.8ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.conference_id = 2) [0m
+  [4;35;1mPage Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 2)) [0m
+  [4;35;1mPoster Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `posters`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;35;1mRegistration Load (0.6ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` = 9) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` = 9) LIMIT 1[0m
+Rendered shared/_sidebar (27.2ms)
+Rendered shared/_news (0.1ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (0.6ms)
+Completed in 158ms (View: 44, DB: 44) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:57:01) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/builder.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:57:01) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/slider.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:57:01) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:57:02) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2009-09-15 13:57:05) [GET]
+  [4;36;1mUser Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+#<User:0x23c6624>
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;36;1mBlog Load (0.6ms)[0m   [0;1mSELECT * FROM `blogs` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (1.2ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;35;1mConference Load (0.6ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;36;1mRegistration Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `registrations`[0m
+  [4;35;1mConference Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `conferences`[0m
+  [4;36;1mRegistration Load (0.6ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` = 9) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 9) [0m
+  [4;36;1mTalk Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (0.9ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`conference_id` = 2 AND `talks`.`user_id` = 9) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 134ms (DB: 17) | 302 Found [http://localhost/logout]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing SiteController#index (for 127.0.0.1 at 2009-09-15 13:57:05) [GET]
+  Parameters: {"id"=>nil}
+  [4;35;1mBlog Load (1.0ms)[0m   [0mSELECT * FROM `blogs` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;36;1mConference Load (1.0ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;35;1mConference Load (1.7ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;36;1mRegistration Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `registrations`[0m
+  [4;35;1mConference Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `conferences`[0m
+  [4;36;1mRegistration Load (0.9ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mTalk Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `talks`[0m
+  [4;36;1mTalk Load (0.8ms)[0m   [0;1mSELECT * FROM `talks` WHERE (`talks`.`conference_id` = 2 AND `talks`.`user_id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering site/index
+Rendered shared/_javascripts (0.6ms)
+Rendered shared/_topmenu (0.1ms)
+  [4;35;1mPage Load (0.8ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.conference_id = 2) [0m
+  [4;36;1mPage Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 2)) [0m
+  [4;35;1mPoster Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `posters`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 2) [0m
+Rendered shared/_sidebar (94.2ms)
+Rendered shared/_news (0.1ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (0.9ms)
+Completed in 138ms (View: 89, DB: 23) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:57:06) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/builder.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:57:07) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/slider.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:57:07) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:57:07) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-09-15 13:57:10) [GET]
+  [4;35;1mBlog Load (1.3ms)[0m   [0mSELECT * FROM `blogs` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;36;1mConference Load (1.5ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.5ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;36;1mRegistration Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `registrations`[0m
+  [4;35;1mConference Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `conferences`[0m
+  [4;36;1mRegistration Load (0.9ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mTalk Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `talks`[0m
+  [4;36;1mTalk Load (1.4ms)[0m   [0;1mSELECT * FROM `talks` WHERE (`talks`.`conference_id` = 2 AND `talks`.`user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mUser Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering users/login
+Rendered users/_screen_name_field_row (2.3ms)
+Rendered users/_password_field_row (0.2ms)
+Rendered shared/_javascripts (0.5ms)
+Rendered shared/_topmenu (0.2ms)
+  [4;36;1mPage Load (1.3ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.conference_id = 2) [0m
+  [4;35;1mPage Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 2)) [0m
+  [4;35;1mPoster Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `posters`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 2) [0m
+Rendered shared/_sidebar (24.5ms)
+Rendered shared/_news (0.1ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (0.7ms)
+Completed in 177ms (View: 25, DB: 26) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:57:11) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/builder.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:57:11) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/slider.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:57:11) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:57:12) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing EmailController#remind (for 127.0.0.1 at 2009-09-15 13:57:17) [GET]
+  [4;35;1mBlog Load (0.7ms)[0m   [0mSELECT * FROM `blogs` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.6ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.5ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;36;1mRegistration Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `registrations`[0m
+  [4;35;1mConference Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `conferences`[0m
+  [4;36;1mRegistration Load (0.7ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mTalk Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `talks`[0m
+  [4;36;1mTalk Load (0.8ms)[0m   [0;1mSELECT * FROM `talks` WHERE (`talks`.`conference_id` = 2 AND `talks`.`user_id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering email/remind
+Rendered shared/_title_bar (0.1ms)
+Rendered shared/_notice (0.1ms)
+Rendered shared/_javascripts (0.9ms)
+Rendered shared/_topmenu (0.2ms)
+  [4;35;1mPage Load (1.3ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.conference_id = 2) [0m
+  [4;36;1mPage Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mUser Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 2)) [0m
+  [4;35;1mPoster Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `posters`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 2) [0m
+Rendered shared/_sidebar (28.4ms)
+Rendered shared/_news (0.1ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (0.7ms)
+Completed in 97ms (View: 40, DB: 26) | 200 OK [http://localhost/email/remind]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:57:18) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/builder.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:57:18) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/slider.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:57:18) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:57:19) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/sound.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from /Users/kristianconsult/my_rails/apps/conference/neurodag2/app/controllers/application_controller.rb:7)
+
+
+Processing EmailController#remind (for 127.0.0.1 at 2009-09-15 13:57:25) [POST]
+  Parameters: {"commit"=>"Email Me!", "authenticity_token"=>"ojuVJe8zHxr83Uif75GJxzfvDuJsjiBU6MmAe8SkWqk=", "user"=>{"email"=>"kmandrup@gmail.com"}}
+  [4;35;1mBlog Load (0.9ms)[0m   [0mSELECT * FROM `blogs` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.7ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.8ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;36;1mRegistration Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `registrations`[0m
+  [4;35;1mConference Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `conferences`[0m
+  [4;36;1mRegistration Load (1.5ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`conference_id` = 2 AND `registrations`.`user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mTalk Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `talks`[0m
+  [4;36;1mTalk Load (0.8ms)[0m   [0;1mSELECT * FROM `talks` WHERE (`talks`.`conference_id` = 2 AND `talks`.`user_id` IS NULL) LIMIT 1[0m
+  [4;35;1mUser Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = 'kmandrup@gmail.com') LIMIT 1[0m
+Sent mail to kmandrup@gmail.com
+
+From: Neurodag <do-not-reply@neurodag.dk>
+To: kmandrup@gmail.com
+Subject: Your login information at Neurodag.dk
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello,
+
+Your login information is:
+
+  Screen name: Kristian
+  Password:    1234
+
+--Best regards,  the Neurodag team
+
+ArgumentError (SMTP-AUTH requested but missing secret phrase):
+  /opt/local/lib/ruby/1.8/net/smtp.rb:777:in `check_auth_args'
+  /Users/kristianconsult/.gem/ruby/1.8/gems/ambethia-smtp-tls-1.1.2/lib/smtp-tls.rb:10:in `do_start'
+  /opt/local/lib/ruby/1.8/net/smtp.rb:525:in `start'
+  app/controllers/email_controller.rb:11:in `remind'
+
+Rendered rescues/_trace (98.2ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
