@@ -25,6 +25,8 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "ambethia-smtp-tls", :lib => "smtp-tls", :source => "http://gems.github.com/"  
+  config.gem 'prawn'
+  config.gem "scrapi"  
   
   config.action_controller.session_store = :active_record_store
   # Only load the plugins named here, in the order given (default is alphabetical).
@@ -47,6 +49,12 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 
+require 'smtp-tls'  
+require 'prawn/format'  
+
+
+# require 'pdf-writer'  
+
 DB_STRING_MAX_LENGTH = 255
 DB_TEXT_MAX_LENGTH = 4000
 HTML_TEXT_FIELD_SIZE = 15
@@ -57,7 +65,6 @@ Time::DATE_FORMATS[:article] = "%A, %B %d, %Y"
 
 Time::DATE_FORMATS[:no_weekday] = "%B %d, %Y"
 
-# require 'smtp_tls'      
   
   if ENV['RAILS_ENV']
      require 'hirb'

@@ -3,8 +3,11 @@ class UsersController < ApplicationController
   helper :profile, :avatar
   before_filter :protect, :only => [:index, :edit]
   
-  def show_rated_talks
-    @user = User.find(params[:id])    
+  def referee_rated_talks
+    page = params[:page]
+    @users = User.paginate :all, :page => page, :per_page => 1, :order => 'created_at DESC', :conditions => "users.role = 'referee' "
+    index = page || 0
+    @user = @users[index]
     return if !@user.is_referee? 
     @title ="Referee #{full_name}:: rated talks "  
     # @ref_rated_talks = Rate.find_all_by_rateable_type_and_user_id('Talk', 2)    
@@ -44,8 +47,9 @@ class UsersController < ApplicationController
     if param_posted?(:user)
       @user = User.new(params[:user])
       empty_spec = Spec.new
-       @user.spec = empty_spec
-      if @user.save 
+      @user.spec = empty_spec
+      @user.save_with_captcha
+      if @user.errors.empty? 
         @user.login!(session)
         flash[:notice] = "User #{@user.screen_name} created!"
         redirect_to_forwarding_url

@@ -85,6 +85,10 @@ module AjaxfulRating # :nodoc:
       end
     end
   
+  def static_stars(stars)
+    content_tag(:div, stars, :class => "stars-left static-stars-#{stars}")
+  end
+  
     # Call this method <strong>within head tags</strong> of the main layout to yield the dynamic styles.
     # It will include the necessary stlyesheet and output the dynamic CSS.
     #

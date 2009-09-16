@@ -15,14 +15,20 @@ class TalksController < ApplicationController
     end
 
     def index
-      @talks_paginated = Talk.paginate :all, :page => params[:page], :order => 'created_at DESC'
-      @talks = Talk.all :order => 'created_at DESC'      
+      @talks = Talk.paginate :all, :page => params[:page], :order => 'created_at DESC'
+      # @talks = Talk.all :order => 'created_at DESC'   
+      
+      respond_to do |format|
+        format.html # index.rhtml
+        format.pdf { render :layout => false }
+      end    
+ 
     end
 
     def referee
       #@talks_paginated = Talk.paginate :all, :page => params[:page], :order => 'created_at DESC'
-      @talks_paginated = Talk.paginate :page => params[:page], :per_page => 5, :order => 'created_at DESC'
-      @talks = Talk.all :order => 'created_at DESC'
+      @talks = Talk.paginate :page => params[:page], :per_page => 5, :order => 'created_at DESC'
+      # @talks = Talk.all :order => 'created_at DESC'
     end
 
     def all_ref_rated
@@ -145,7 +151,9 @@ class TalksController < ApplicationController
 
   private
     def get_talk
-      @talk = Talk.find(params[:id])
+      if params[:id]
+        @talk = Talk.find(params[:id])
+      end
     end
 
   end

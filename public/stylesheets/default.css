@@ -37,6 +37,24 @@ div.title {
   font-weight: bold;	
 }
 
+
+#errorExplanation p {
+  font-size: 12px;	
+}
+
+#errorExplanation h2 {
+  font-size: 12px;
+  font-weight: bold;	
+  color: red;
+}
+
+#errorExplanation li {
+  font-weight: bold;
+  font-size: 11px;		
+}
+
+
+
 .after-first {
   margin-top: 10px;	
 }
@@ -48,30 +66,6 @@ td.name {
 
 td.label {
   font-weight: bold;
-}
-
-.star {
-  background-repeat:no-repeat;	
-  background-position: left center;
-}
-
-.stars-0 {
-  background-image: url(../images/ajaxful_rating/stars-0.png);
-}
-.stars-1 {
-  background-image: url(../images/ajaxful_rating/stars-1.png);
-}
-.stars-2 {
-  background-image: url(../images/ajaxful_rating/stars-2.png);
-}
-.stars-3 {
-  background-image: url(../images/ajaxful_rating/stars-3.png);
-}
-.stars-4 {
-  background-image: url(../images/ajaxful_rating/stars-4.png);
-}
-.stars-5 {
-  background-image: url(../images/ajaxful_rating/stars-5.png);
 }
 
 

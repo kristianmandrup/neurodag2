@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_one :spec, :dependent => :destroy
   has_one :faq, :dependent => :destroy
   has_one :blog, :dependent => :destroy
+
+  apply_simple_captcha
   
   ajaxful_rater
 
@@ -48,6 +50,8 @@ class User < ActiveRecord::Base
 
   attr_accessor :remember_me
   attr_accessor :current_password
+  
+  attr_accessible :screen_name, :email, :password, :password_confirmation, :captcha, :captcha_key
   
   # Max & min lengths for all fields 
   SCREEN_NAME_MIN_LENGTH = 4 

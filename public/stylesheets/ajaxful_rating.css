@@ -2,6 +2,31 @@
 * Style by Rogie http://www.komodomedia.com/blog/2007/01/css-star-rating-redux/
 */
 
+.stars-left {
+  background-repeat:no-repeat;	
+  background-position: left center;
+}
+
+.static-stars-0 {
+  background-image: url(/images/ajaxful_rating/stars-0.png);
+}
+.static-stars-1 {
+  background-image: url(/images/ajaxful_rating/stars-1.png);
+}
+.static-stars-2 {
+  background-image: url(/images/ajaxful_rating/stars-2.png);
+}
+.static-stars-3 {
+  background-image: url(/images/ajaxful_rating/stars-3.png);
+}
+.static-stars-4 {
+  background-image: url(/images/ajaxful_rating/stars-4.png);
+}
+.static-stars-5 {
+  background-image: url(/images/ajaxful_rating/stars-5.png);
+}
+
+
 .ajaxful-rating,
 .ajaxful-rating a:hover,
 .ajaxful-rating a:active,

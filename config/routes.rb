@@ -13,13 +13,15 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :pages
   map.resources :conferences
   map.resources :posters, :member => {:rate => :post}, :collection => {:your => :get}
-  map.resources :talks  , :member => {:rate => :post}, :collection => {:referee => :get, :all_ref_rated => :get}
+  map.resources :talks, :member => {:rate => :post}, :collection => {:referee => :get, :all_ref_rated => :get}
   map.resources :registrations
 
   # REST resources.
   map.resources :specs
-  map.resources :users, :member => {:show_rated_talks => :get},  :collection => {:delete_all => :put}
+  map.resources :users,  :collection => {:delete_all => :put, :referee_rated_talks => :get}
   
+  
+  map.simple_captcha '/simple_captcha/:action', :controller => 'simple_captcha'  
   # The priority is based upon order of creation: first created -> highest priority.
   
   # Sample of regular route:

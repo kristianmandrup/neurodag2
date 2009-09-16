@@ -3,9 +3,10 @@ namespace :bootstrap do
     task :default_users => :environment do
        User.delete_all
        User.create(:screen_name => 'rune', :email => 'rune2earth-admin@gmail.com', :password => 'admin', :role => 'admin', :first_name => 'Rune', :last_name => 'Berg')
-       User.create(:screen_name => 'referee', :email => 'rune2earth-ref@gmail.com', :password => 'referee', :role => 'referee', :first_name => 'Rune', :last_name => 'Berg')
-       User.create(:screen_name => 'user', :email => 'rune2earth-user@gmail.com', :password => 'user', :role => 'user', :first_name => 'Rune', :last_name => 'Berg')    
-       User.create(:screen_name => 'user2', :email => 'rune2earth-user2@gmail.com', :password => 'user2', :role => 'user', :first_name => 'Rune', :last_name => 'Berg')    
+       User.create(:screen_name => 'referee', :email => 'rune2earth-ref@gmail.com', :password => 'referee', :role => 'referee', :first_name => 'Ref', :last_name => 'A')
+       User.create(:screen_name => 'referee2', :email => 'rune2earth-ref2@gmail.com', :password => 'referee2', :role => 'referee', :first_name => 'Ref', :last_name => 'B')
+       User.create(:screen_name => 'user', :email => 'rune2earth-user@gmail.com', :password => 'user', :role => 'user', :first_name => 'John', :last_name => 'Doe')    
+       User.create(:screen_name => 'user2', :email => 'rune2earth-user2@gmail.com', :password => 'user2', :role => 'user', :first_name => 'Sam', :last_name => 'Jones')    
     end
 
     desc "Create the default conference"
